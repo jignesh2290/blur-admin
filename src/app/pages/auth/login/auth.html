@@ -1,0 +1,44 @@
+﻿
+<div class="auth-block">
+    <div class="modal-header" style="border:none;">
+        <h1>Sign in to FoundryPro</h1>
+        <a href ng-click="showRegister()" class="auth-link">New to FoundryPro? Sign up!</a>
+    </div>
+    <div class="modal-body" style="padding:0px;">
+        <form class="form-horizontal" name="frmLogin">
+            <div data-ng-hide="message == ''" class="alert bg-danger" style="color: #ffffff;" role="alert">
+                {{message}}
+            </div>
+            <div class="form-group" ng-class="{'has-error':frmLogin.uLogin.$error.required && doLoginValidation}">
+                <label for="inputUserName3" class="col-sm-2 control-label">User Name</label>
+
+                <div class="col-sm-10">
+                    <input type="text" placeholder="User Name" id="inputUserName3" name="uLogin" class="form-control" data-ng-model="loginData.userName" ng-focus="doLoginValidation = false" ng-blur="doLoginValidation = true" required />
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error':frmLogin.uPassword.$error.required && doPasswordLoginValidation}">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+
+                <div class="col-sm-10">
+                    <input type="password" placeholder="Password" id="inputPassword3" name="uPassword" class="form-control" data-ng-model="loginData.password" ng-focus="doPasswordLoginValidation = false" ng-blur="doPasswordLoginValidation = true" required />
+                 </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default btn-auth" ng-click="login()" ng-disabled="frmLogin.$invalid || !frmLogin.$dirty">Sign in</button>
+                    <a href class="forgot-pass">Forgot password?</a>
+                </div>
+            </div>
+        </form>
+
+        <div class="auth-sep"><span><span>or Sign in with one click</span></span></div>
+
+        <div class="al-share-auth">
+            <ul class="al-share clearfix">
+                <li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>
+                <li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>
+                <li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>

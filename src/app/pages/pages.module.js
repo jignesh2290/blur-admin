@@ -15,7 +15,7 @@
     'BlurAdmin.pages.tables',
     'BlurAdmin.pages.charts',
     'BlurAdmin.pages.maps',
-    'BlurAdmin.pages.profile',
+    'BlurAdmin.pages.profile'
   ])
       .config(routeConfig);
 
@@ -29,18 +29,18 @@
       subMenu: [{
         title: 'Sign In',
         fixedHref: 'auth.html',
-        blank: true
+        blank: false
       }, {
         title: 'Sign Up',
         fixedHref: 'reg.html',
-        blank: true
+        blank: false
       }, {
         title: 'User Profile',
         stateRef: 'profile'
       }, {
         title: '404 Page',
         fixedHref: '404.html',
-        blank: true
+        blank: false
       }]
     });
     baSidebarServiceProvider.addStaticItem({

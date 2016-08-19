@@ -9,11 +9,11 @@
       .directive('pageTop', pageTop);
 
   /** @ngInject */
-  function pageTop() {
+  function pageTop(authService) {
     return {
       restrict: 'E',
-      templateUrl: 'app/theme/components/pageTop/pageTop.html'
+      templateUrl: 'app/theme/components/pageTop/pageTop.html',
+      controller: 'PageTopCtrl'
     };
   }
-
 })();

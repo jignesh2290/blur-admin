@@ -44,6 +44,9 @@ $modal-input-border: #e7e7e7;
       border: 1px solid $modal-input-border;
       @include placeholderStyle($dropdown-text, 0.9);
     }
+    .has-error .form-control {
+        border: 1px solid #ed7878;
+    }
     .modal-body p, .modal-body div, .modal-body span{
       color: $dropdown-text;
     }

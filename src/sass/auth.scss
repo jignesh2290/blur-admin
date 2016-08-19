@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  @include main-background();
+  /*//@include main-background();*/
   height: 100%;
 }
 
@@ -20,7 +20,7 @@ $text-color: #ffffff;
   @include placeholderStyle($text-color, 0.9);
   background-color: rgba(0, 0, 0, .4);
   border-radius: 5px;
-  color: $text-color;
+  color: $text-color !important;
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
   @include placeholderStyle($text-color, 0.6);
@@ -34,7 +34,6 @@ $text-color: #ffffff;
 }
 
 .auth-block {
-  width: 540px;
   margin: 0 auto;
   border-radius: 5px;
   @include bg-translucent-dark(0.55);
@@ -146,4 +145,15 @@ a.forgot-pass {
 
 .btn-auth {
   color: #ffffff!important;
+}
+
+.modal-content{
+    background: url(../assets/img/blur-bg.jpg) center center no-repeat;
+    background-size: cover;
+    will-change: transform;
+    z-index: -1;
+}
+
+.modal-dialog{
+    margin-top: 80px !important;
 }

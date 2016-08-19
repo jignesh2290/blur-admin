@@ -1,0 +1,66 @@
+﻿
+<div class="auth-block">
+    <div class="modal-header" style="border:none;">
+        <h1>Sign up to FoundryPro</h1>
+        <a href ng-click="showLogin()" class="auth-link">Already have a FoundryPro account? Sign in!</a>
+    </div>
+    <div class="modal-body" style="padding:0px;">
+        <form class="form-horizontal" name="frmRegister">
+            <div class="form-group" ng-class="{'has-error':frmRegister.uEmail.$invalid && doEmailValidation}">
+                <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" autofocus data-ng-model="registration.Email" ng-focus="doEmailValidation = false" ng-blur="doEmailValidation = true" name="uEmail" required>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error':frmRegister.uUserName.$invalid && doUserValidation}">
+                <label for="inputName3" class="col-sm-3 control-label">User Name</label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="inputName3" placeholder="User Name" required name="uUserName" data-ng-model="registration.UserName" data-ng-minlength="1" ng-focus="doUserValidation = false" ng-blur="doUserValidation = true">
+                </div>
+            </div>
+           
+            <div class="form-group" ng-class="{'has-error':frmRegister.uPassword.$invalid && doPasswordValidation}">
+                <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+
+                <div class="col-sm-9">
+                    <input type="password" name="uPassword" class="form-control" id="inputPassword3" pattern=".{8,}" placeholder="Password" required data-ng-model="registration.Password" data-ng-minlength="1" ng-focus="doPasswordValidation = false" ng-blur="doPasswordValidation = true">
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':frmRegister.uPassword.$dirty && (registration.Password != registration.ConfirmPassword) && doConfirmValidation }">
+                <label for="inputPassword4" class="col-sm-3 control-label">Confirm Password</label>
+
+                <div class="col-sm-9">
+                    <input type="password" id="inputPassword4" name="uConfirmPassword" pattern=".{8,}" placeholder="Confirm Password" class="form-control" data-ng-model="registration.ConfirmPassword" ng-disabled="frmRegister.uPassword.$invalid" data-ng-minlength="1" ng-focus="doConfirmValidation = false" ng-blur="doConfirmValidation = true" required>
+                </div>
+            </div>
+            <!--<div class="error-box" id="signupError" ng-show="inError || ((frmRegister.uUserName.$invalid && doUserValidation) || (frmRegister.uLastName.$invalid && doEmailValidation) || (frmRegister.uEmail.$invalid && doEmailValidation) || (frmRegister.uPassword.$invalid && doPasswordValidation) || (frmRegister.uPassword.$dirty && (registration.Password != registration.ConfirmPassword) && doConfirmValidation))">
+                <ul>
+                    <li ng-show="inError"><span class="fa fa-circle"></span>{{message}}</li>
+                    <li ng-show="frmRegister.uEmail.$invalid && doEmailValidation"><span class="fa fa-circle"></span>Please enter a valid email address</li>
+                    <li ng-show="frmRegister.uUserName.$invalid && doUserValidation"><span class="fa fa-circle"></span>Please choose a username</li>
+                    <li ng-show="frmRegister.uPassword.$invalid && doPasswordValidation"><span class="fa fa-circle"></span>Please enter a password</li>
+                    <li ng-show="frmRegister.uConfirmPassword.$dirty && (registration.Password != registration.ConfirmPassword) && doConfirmValidation"><span class="fa fa-circle"></span>Sorry. Passwords don't match</li>
+                </ul>
+            </div>-->
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-default btn-auth" data-ng-click="signUp()" ng-disabled="frmRegister.$invalid || !frmRegister.$dirty">Sign up</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="auth-sep"><span><span>or Sign up with one click</span></span></div>
+
+        <div class="al-share-auth">
+            <ul class="al-share clearfix">
+                <li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>
+                <li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>
+                <li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
